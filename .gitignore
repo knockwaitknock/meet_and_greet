@@ -13,5 +13,8 @@
 /tmp
 
 .DS_Store
+public/storage
+public/uploads
 config/database.yml
+config/secrets.yml
 .idea/
