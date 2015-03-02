@@ -49,14 +49,15 @@ footer.color-light
           = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
       .sliding-container
         ul.sliding#sliding-team
-          - @members.each do |member|
-            li.col-3.align-center
-              .sliding-item-container
-                = image_tag member.photo.url(:regular), width: '170', height: '170', alt: member.name
-                .subtitle.member-name
-                  = member.name
-                .member-desc
-                  = member.desc
+          - if @members.present?
+            - @members.each do |member|
+              li.col-3.align-center
+                .sliding-item-container
+                  = image_tag member.photo.url(:regular), width: '170', height: '170', alt: member.name
+                  .subtitle.member-name
+                    = member.name
+                  .member-desc
+                    = member.desc
   #schedule.page
     .page-container
       .text-center
