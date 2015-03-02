@@ -1,0 +1,79 @@
+.sliding-container {
+  position:relative;
+  height:350px;
+  width:100%;
+
+  overflow: hidden;
+
+  ul.sliding {
+    /*Add if you want to disable the option of selecting the text while sliding*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left:0;
+//    margin-top:3vh;
+//    height:80%;
+    padding-top: 40px;
+
+
+    list-style-type: none;
+
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    li {
+      float: left;
+      height: 100%;
+      //  margin-right: 40px;
+      color: #999;
+      //  font-weight: 300;
+      cursor: pointer;
+
+      &#active{}
+
+      &.col-3 {
+        width: 340px;
+      }
+
+      &.col-2 {
+        width: 510px;
+      }
+
+      &.align-left {
+        text-align: left;
+      }
+
+      &.align-center {
+        text-align: center;
+      }
+
+      .sliding-item-container {
+        padding: 0 20px;
+
+        .member-name {
+          color: $white;
+        }
+        .member-desc {
+          font-size: 14px;
+        }
+      }
+    }
+
+  }
+  img {
+    border-radius: 100px;
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
+

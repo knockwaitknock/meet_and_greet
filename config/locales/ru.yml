@@ -1,0 +1,46 @@
+ru:
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+  activerecord:
+    models:
+      member: 'Участники'
+      meeting: 'Занятия'
+      magazine: 'Отзывы'
+      question: 'Вопросы и ответы'
+    attributes:
+      member:
+        name: 'Имя'
+        desc: 'Описание'
+        photo: 'Фотография'
+        sort: 'Порядок'
+        published: 'Опубликовано'
+      meeting:
+        date_from: 'Дата'
+        time_from: 'Время начала'
+        time_to: 'Время окончания'
+        desc: 'Описание'
+        published: 'Опубликовано'
+      magazine:
+        title: 'Источник'
+        code: 'URL'
+        comment: 'Комментарий'
+        sort: 'Порядок'
+        published: 'Опубликовано'
+      question:
+        title: 'Вопрос'
+        answer: 'Ответ'
+        sort: 'Порядок'
+        published: 'Опубликовано'

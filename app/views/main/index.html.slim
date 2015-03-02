@@ -1,0 +1,116 @@
+header.color-light
+  .logo
+    a.header-logo href="/"
+  .menu
+    ul.menu-list
+      li.menu-item
+        a href="#about"
+          = 'Школа'
+      li.menu-item
+        a href="#team"
+          = 'Команда'
+      li.menu-item
+        a href="#schedule"
+          = 'Мастер-классы'
+      li.menu-item
+        a href="#reviews"
+          = 'О нас пишут'
+      li.menu-item
+        a href="#questions"
+          = 'Вопросы и ответы'
+      li.menu-item
+        a href="#contacts"
+          = 'Контакты'
+  .social
+    a.social-item-tw href="#tweet"
+    a.social-item-fb href="#facebook"
+footer.color-light
+  .enroll
+    a href="#enroll"
+      = 'Записаться на мастер-класс'
+.content-wrapper
+  #parallax-images
+  #main.page
+    .img-wrapper
+      = image_tag "logo-big.png", class: "", alt: ''
+  #about.page
+    .page-container
+      .text-center
+        h2
+          = 'Школа Meet & Greet'
+        p
+          = 'По характеру рельефа полуостров делится на три неравные части: Северо-Крымская равнина с Тарханкутской возвышенностью (около 70 % территории), грядово-холмистые равнины Керченского полуострова с проявлением грязевого вулканизма и горный Крым, простирающийся тремя грядами — Главной (южной), Внутренней и Внешней (северной), разделёнными продольными равнинами.'
+  #team.page
+    .page-container
+      .text-center
+        h2
+          = 'Наша команда'
+        p.text-light
+          = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
+      .sliding-container
+        ul.sliding#sliding-team
+          - @members.each do |member|
+            li.col-3.align-center
+              .sliding-item-container
+                = image_tag member.photo.url(:regular), width: '170', height: '170', alt: member.name
+                .subtitle.member-name
+                  = member.name
+                .member-desc
+                  = member.desc
+  #schedule.page
+    .page-container
+      .text-center
+        h2
+          = 'Расписание занятий'
+        p
+          = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
+      .sliding-container
+        ul.sliding#sliding-schedule
+          - @meetings.each do |meeting|
+            li.col-3.align-left
+              .sliding-item-container
+                .subtitle.date-from
+                  = l meeting.date_from, :format => '%d %B'
+                  .time
+                    = l meeting.time_from, :format => '%H:%M'
+                    = l meeting.time_to, :format => ' - %H:%M'
+                .meeting-desc
+                  = meeting.desc
+
+  #reviews.page
+    .page-container
+      .text-right
+        h2
+          = 'О нас пишут'
+        ul
+          - @magazines.each do |magazine|
+            li
+              .subtitle.magazine
+                = magazine.title
+              p.review
+                = magazine.comment
+  #questions.page
+    .page-container
+      .text-center
+        h2
+          = 'Вопросы и ответы'
+        p
+          = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
+      .sliding-container
+        ul.sliding#sliding-questions
+          - @questions.each do |question|
+            li.col-2.align-left
+              .sliding-item-container
+                .subtitle.date-from
+                  = question.title
+                .answer
+                  = question.answer
+  #contacts.page
+    .page-container
+      .text-center
+        h2
+          = 'Наши контакты'
+        p.text-white
+          = 'Занятия проходят по адресу:'
+          br
+          = 'Москва, Большая лубянка, 13 (Starики bar)'
