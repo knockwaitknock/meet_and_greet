@@ -66,16 +66,17 @@ footer.color-light
           = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
       .sliding-container
         ul.sliding#sliding-schedule
-          - @meetings.each do |meeting|
-            li.col-3.align-left
-              .sliding-item-container
-                .subtitle.date-from
-                  = l meeting.date_from, :format => '%d %B'
-                  .time
-                    = l meeting.time_from, :format => '%H:%M'
-                    = l meeting.time_to, :format => ' - %H:%M'
-                .meeting-desc
-                  = meeting.desc
+          - if @meetings.present?
+            - @meetings.each do |meeting|
+              li.col-3.align-left
+                .sliding-item-container
+                  .subtitle.date-from
+                    = l meeting.date_from, :format => '%d %B'
+                    .time
+                      = l meeting.time_from, :format => '%H:%M'
+                      = l meeting.time_to, :format => ' - %H:%M'
+                  .meeting-desc
+                    = meeting.desc
 
   #reviews.page
     .page-container
@@ -83,12 +84,13 @@ footer.color-light
         h2
           = 'О нас пишут'
         ul
-          - @magazines.each do |magazine|
-            li
-              .subtitle.magazine
-                = magazine.title
-              p.review
-                = magazine.comment
+          - if @magazines.present?
+            - @magazines.each do |magazine|
+              li
+                .subtitle.magazine
+                  = magazine.title
+                p.review
+                  = magazine.comment
   #questions.page
     .page-container
       .text-center
@@ -98,13 +100,14 @@ footer.color-light
           = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
       .sliding-container
         ul.sliding#sliding-questions
-          - @questions.each do |question|
-            li.col-2.align-left
-              .sliding-item-container
-                .subtitle.date-from
-                  = question.title
-                .answer
-                  = question.answer
+          - if @questions.present?
+            - @questions.each do |question|
+              li.col-2.align-left
+                .sliding-item-container
+                  .subtitle.date-from
+                    = question.title
+                  .answer
+                    = question.answer
   #contacts.page
     .page-container
       .text-center
