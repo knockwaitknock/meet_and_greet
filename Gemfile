@@ -14,8 +14,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem 'ckeditor'
-gem 'ckeditor_rails'
+# gem 'ckeditor'
+# gem 'ckeditor_rails'
 
 gem 'rails_admin'
 gem 'devise'
