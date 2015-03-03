@@ -47,9 +47,9 @@ footer.color-light
           = 'Наша команда'
         p.text-light
           = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
-      .sliding-container
-        ul.sliding#sliding-team
-          - if @members.present?
+      - if @members.present?
+        .sliding-container
+          ul.sliding#sliding-team
             - @members.each do |member|
               li.col-3.align-center
                 .sliding-item-container
@@ -65,9 +65,9 @@ footer.color-light
           = 'Расписание занятий'
         p
           = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
-      .sliding-container
-        ul.sliding#sliding-schedule
-          - if @meetings.present?
+      - if @meetings.present?
+        .sliding-container
+          ul.sliding#sliding-schedule
             - @meetings.each do |meeting|
               li.col-3.align-left
                 .sliding-item-container
@@ -99,9 +99,9 @@ footer.color-light
           = 'Вопросы и ответы'
         p
           = 'Открытая кухня Meet&Greet это пространство для встреч, общения и совместного приготовления еды.'
-      .sliding-container
-        ul.sliding#sliding-questions
-          - if @questions.present?
+      - if @questions.present?
+        .sliding-container
+          ul.sliding#sliding-questions
             - @questions.each do |question|
               li.col-2.align-left
                 .sliding-item-container
