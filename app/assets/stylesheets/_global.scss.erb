@@ -42,17 +42,17 @@ header {
 
     .social a.social-item-fb
     {
-      background: url(fb-black.png) no-repeat;
+      background: url('<%= asset_path("fb-black.png") %> ') no-repeat;
     }
 
     .social a.social-item-tw
     {
-      background: url(tw-black.png) no-repeat;
+      background: url('<%= asset_path("tw-black.png") %> ') no-repeat;
     }
 
     .menu .menu-list
     {
-      background-image: url(dividers-black.png);
+      background-image: url('<%= asset_path("dividers-black.png") %> ');
     }
   }
 
@@ -66,11 +66,11 @@ header {
     }
     .social a.social-item-tw
     {
-      background: url(tw.png) no-repeat;
+      background: url('<%= asset_path("tw.png") %> ') no-repeat;
     }
     .menu .menu-list
     {
-      background-image: url(dividers.png);
+      background-image: url('<%= asset_path("dividers.png") %> ');
     }
   }
 
@@ -88,7 +88,7 @@ header {
       margin: 15px 20px;
 
       opacity: 0;
-      background: url(logo-small-green.png) no-repeat;
+      background: url('<%= asset_path("logo-small-green.png") %> ') no-repeat;
     }
   }
 
@@ -186,12 +186,12 @@ header {
 
   .social a.social-item-fb:hover
   {
-    background: url(fb-green.png) no-repeat;
+    background: url('<%= asset_path("fb-green.png") %> ') no-repeat;
   }
 
   .social a.social-item-tw:hover
   {
-    background: url(tw-green.png) no-repeat;
+    background: url('<%= asset_path("tw-green.png") %> ') no-repeat;
   }
 }
 
@@ -229,7 +229,7 @@ footer
     transition: background-image .2s linear;
     text-align: center;
 
-    background: url(button.png) -1px -1px no-repeat;
+    background: url('<%= asset_path("button.png") %> ') -1px -1px no-repeat;
 
     a
     {
@@ -248,12 +248,12 @@ footer
 
   &.color-light .enroll
   {
-    background: url(button.png) no-repeat;
+    background: url('<%= asset_path("button.png") %> ') no-repeat;
     background-position: -1px -1px;
   }
   &.color-dark .enroll
   {
-    background: url(button-black.png) no-repeat;
+    background: url('<%= asset_path("button-black.png") %> ') no-repeat;
     background-position: -1px -1px;
   }
 }
@@ -267,7 +267,7 @@ footer
 }
 #main
 {
-  background: url(main.jpg) no-repeat;
+  background: url('<%= asset_path("main.jpg") %> ') no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
 }
@@ -275,14 +275,13 @@ footer
 #about,
 #schedule
 {
-    background: url(white-bg.gif) no-repeat;
+  background: url('<%= asset_path("white-bg.gif") %> ') no-repeat;
   background-size: 100% 100%;
 }
 
 #team,
 #contacts
 {
-  /*background: url(metall.jpg) no-repeat;*/
   background: url('<%= asset_path("metall.jpg") %> ') no-repeat;;
   background-size: 100% 100%;
 }
@@ -392,7 +391,7 @@ ul.sliding
   line-height: 25px;
 }
 #reviews {
-  background: url(wood.jpg) no-repeat;
+  background: url('<%= asset_path("wood.jpg") %> ') no-repeat;
   background-size: 100% 100%;
 }
 .answer {
