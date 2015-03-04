@@ -74,6 +74,18 @@ header {
     }
   }
 
+  &.color-dark,
+  &.color-light {
+      .social a.social-item-fb:hover
+      {
+        background: url('<%= asset_path("fb-green.png") %> ') no-repeat;
+      }
+
+      .social a.social-item-tw:hover {
+        background: url('<%= asset_path("tw-green.png") %> ') no-repeat;
+      }
+  }
+
   .logo {
     position: fixed;
     z-index: 100000;
@@ -182,17 +194,6 @@ header {
     margin-right: 10px;
   }
 
-
-
-  .social a.social-item-fb:hover
-  {
-    background: url('<%= asset_path("fb-green.png") %> ') no-repeat;
-  }
-
-  .social a.social-item-tw:hover
-  {
-    background: url('<%= asset_path("tw-green.png") %> ') no-repeat;
-  }
 }
 
 footer
