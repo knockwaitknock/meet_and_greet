@@ -11,6 +11,10 @@ class MemberUploader < CarrierWave::Uploader::Base
     "storage/#{model.class.base_class.name.underscore}/#{model.id}"
   end
 
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
+
   def filename
     "#{mounted_as}#{File.extname(original_filename)}" if original_filename.present?
   end
