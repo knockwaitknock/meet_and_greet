@@ -29,7 +29,6 @@ footer.color-light
     a href="#enroll"
       = 'Записаться на мастер-класс'
 .content-wrapper
-  #parallax-images
   #main.page
     .img-wrapper
       = image_tag "logo-big.png", class: "", alt: ''
@@ -40,6 +39,8 @@ footer.color-light
           = 'Школа Meet & Greet'
         p
           = 'По характеру рельефа полуостров делится на три неравные части: Северо-Крымская равнина с Тарханкутской возвышенностью (около 70 % территории), грядово-холмистые равнины Керченского полуострова с проявлением грязевого вулканизма и горный Крым, простирающийся тремя грядами — Главной (южной), Внутренней и Внешней (северной), разделёнными продольными равнинами.'
+    .parallax-item.icon.icon-vegetables data-speed="0.35" data-section="2"
+      = image_tag 'p-vegetables.png', alt: '', width: 280, height: 380
   #team.page
     .page-container
       .text-center
@@ -78,7 +79,10 @@ footer.color-light
                       = l meeting.time_to, :format => ' - %H:%M'
                   .meeting-desc
                     = meeting.desc
-
+    .parallax-item.icon.icon-lime data-speed="0.2" data-section="4"
+      = image_tag 'p-lime.png', alt: '', width: 250, height: 250
+    .parallax-item.icon.icon-kettle data-speed="0.3" data-section="4"
+      = image_tag 'p-kettle.png', alt: '', width: 480, height: 500
   #reviews.page
     .page-container
       .text-right
@@ -109,6 +113,8 @@ footer.color-light
                     = question.title
                   .answer
                     = question.answer
+    .parallax-item.icon.icon-knifes data-speed="0.2" data-section="6"
+      = image_tag 'p-knifes.png', alt: '', width: 400, height: 380
   #contacts.page
     .page-container
       .text-center

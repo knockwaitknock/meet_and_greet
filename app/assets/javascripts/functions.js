@@ -45,20 +45,11 @@ $(function() {
         $("#main").css("background-position", "0% -" + ((scrolledY * 0.15)) + "px");
     });
 
-//    $(window).scroll(function () {
-//        if($(window).scrollTop() > 30 + 50 + 25){
-//            $(".img-wrapper").animate({
-//                opacity: 0
-//            }, 1000, function() {
-//                // Анимация завершена; этот код работает во всех браузерах.
-//            });
-//        };
-//    });
-
     var bigLogo = $('.img-wrapper');
     var smallLogo = $('.header-logo');
     var range = 200;
     $(window).on('scroll', function () {
+        parallax(imageHeight);
         var st = $(this).scrollTop();
         bigLogo.each(function () {
             var offset = $(this).offset().top;
@@ -92,28 +83,58 @@ $(function() {
         }
     );
 
-
-    /*$("ul").on('pan', function(event) {
-     console.log("PANNING OCCURED!!");
-     }); //triggered when user pans
-
-     $("ul").on('changeActiveIndex', function(event) {
-     console.log("changeActiveIndex OCCURED!!");
-     }); //triggered when current active item has changed
-     */
-
-    /*$("ul").on('changePos', function(event) {
-     console.log("new pos: "+ $("ul").getCurrentPos());
-     }); //triggered when position of carousel has changed*/
-
-    /*$("ul").on('swipeout', function(event) {
-     console.log("swipe out occured");
-     });*/
-
-
-    $( window ).resize(function() {
+    $(window).resize(function() {
         $("ul#sliding-team").reload();
         $("ul#sliding-schedule").reload();
-    });//Recalculate width and center positions and sizes when window is resized
-
+        $("ul#sliding-questions").reload();
+    });
 });
+
+function parallax(imageHeight){
+    var scrolled = $(window).scrollTop(),
+        section = 2,
+        speed = 0.5;
+    $(".parallax-item").each(function(){
+        var this_speed = $(this).data("speed"),
+            this_section = $(this).data("section"),
+            this_scrolled = 0;
+
+        this_speed = this_speed || speed;
+        this_section = this_section || section;
+
+        if((scrolled - imageHeight*(this_section - 2)) > 0)
+            this_scrolled = scrolled - imageHeight*(this_section - 2);
+        $(this).css({
+            'bottom':(this_scrolled*this_speed)+'px'
+        });
+    })
+}
+
+//ymaps.ready(init);
+//var myMap,
+//    myPlacemark;
+//
+//
+//function init(){
+//    myMap = new ymaps.Map("map", {
+//        center: [55.7703, 37.6256],
+//        zoom: 16,
+//        controls: ["zoomControl"]
+//    });
+//
+//    myPlacemark = new ymaps.Placemark([55.7703, 37.6256], null, {
+//        iconLayout: 'default#image',
+////        iconImageHref: tpl_uri + '/img/placemark2.png',
+//        iconImageSize: [94, 54],
+//        iconImageOffset: [-47, -54],
+//        iconShape: {
+//            type: 'Circle',
+//            coordinates: [0, 0],
+//            radius: 20
+//        }
+//    });
+//    myMap.geoObjects.add(myPlacemark);
+//
+//}
+
+
