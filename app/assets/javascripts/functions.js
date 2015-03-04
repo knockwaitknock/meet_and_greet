@@ -120,7 +120,7 @@ function parallax(imageHeight){
         if((scrolled - imageHeight*(this_section - 2)) > 0)
             this_scrolled = scrolled - imageHeight*(this_section - 2);
         $(this).css({
-            'top': 75 - (this_scrolled*this_speed)+'%'
+            'top': 67 - (this_scrolled*this_speed)+'%'
         });
 
         $(this).css({
