@@ -270,21 +270,25 @@ footer
 {
   background: url('<%= asset_path("main.jpg") %> ') no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: 100% auto;
 }
 
 #about,
 #schedule
 {
   background: url('<%= asset_path("white-bg.gif") %> ') no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
 }
 
 #team,
 #contacts
 {
   background: url('<%= asset_path("metall.jpg") %> ') no-repeat;;
-  background-size: 100% 100%;
+  background-size: 100% auto;
+}
+#reviews {
+    background: url('<%= asset_path("wood.jpg") %> ') no-repeat;
+    background-size: 100% auto;
 }
 .text-center {
   margin: 0 auto;
@@ -391,10 +395,7 @@ ul.sliding
   font-size: 15px;
   line-height: 25px;
 }
-#reviews {
-  background: url('<%= asset_path("wood.jpg") %> ') no-repeat;
-  background-size: 100% 100%;
-}
+
 .answer {
   color: #262626;
   font-size: 15px;
