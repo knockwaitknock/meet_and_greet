@@ -1,8 +1,8 @@
 body
 {
     //  background: #f5f2f0;
-    //  width:100%;
-    //  min-width: 1024px;
+    /*width:100%;*/
+    /*min-width: 980px;*/
     font: normal 16px/1.25 'roboto_slabregular';
     //  color: #212121;
     //  text-rendering: optimizeLegibility;
@@ -325,11 +325,6 @@ p.text-white {
 }
 .page-container
 {
-//  position:absolute;
-//  top:50%;
-//  height:10em;
-//  margin-top:-5em;
-
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -394,10 +389,40 @@ ul.sliding
   color: #b2b2b2;
   font-size: 15px;
   line-height: 25px;
+  padding-bottom: 20px;
 }
 
 .answer {
   color: #262626;
   font-size: 15px;
   line-height: 25px;
+}
+
+.content-wrapper {
+    .parallax-item{
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        -webkit-transition: all 2.2s;
+        -moz-transition: all 2.2s;
+        -ms-transition: all 2.2s;
+        -o-transition: all 2.2s;
+        transition: all 2.2s;
+        -webkit-transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000);
+        -moz-transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000);
+        -o-transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000);
+        transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000); /* custom */
+    }
+    .icon-vegetables {
+        right: 70px;
+    }
+    .icon-lime {
+        left: -25px;
+    }
+    .icon-kettle {
+        right: -245px;
+    }
+    .icon-knifes {
+        right: 0;
+    }
 }
