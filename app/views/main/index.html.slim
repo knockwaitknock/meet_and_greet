@@ -33,7 +33,7 @@ footer.color-light
     .img-wrapper
       = image_tag "logo-big.png", class: "", alt: ''
   #about.page
-    .page-container
+    .page-container.parallax-item-content data-speed="0.02" data-section="2"
       .text-center
         h2
           = 'Школа Meet & Greet'
@@ -42,7 +42,7 @@ footer.color-light
     .parallax-item.icon.icon-vegetables data-speed="0.35" data-section="2"
       = image_tag 'p-vegetables.png', alt: '', width: 280, height: 380
   #team.page
-    .page-container
+    .page-container.parallax-item-content data-speed="0.02" data-section="3"
       .text-center
         h2
           = 'Наша команда'
@@ -60,7 +60,7 @@ footer.color-light
                   .member-desc
                     = member.desc
   #schedule.page
-    .page-container
+    .page-container.parallax-item-content data-speed="0.02" data-section="4"
       .text-center
         h2
           = 'Расписание занятий'
@@ -84,7 +84,7 @@ footer.color-light
     .parallax-item.icon.icon-kettle data-speed="0.3" data-section="4"
       = image_tag 'p-kettle.png', alt: '', width: 480, height: 500
   #reviews.page
-    .page-container
+    .page-container.parallax-item-content data-speed="0.02" data-section="5"
       .text-right
         h2
           = 'О нас пишут'
@@ -115,7 +115,7 @@ footer.color-light
                     = question.answer
     .parallax-item.icon.icon-knifes data-speed="0.5" data-section="6"
       = image_tag 'p-knifes.png', alt: '', width: 400, height: 380
-  #contacts.page
+  #contacts.page.parallax-item-content data-speed="0.02" data-section="7"
     .page-container
       .text-center
         h2
