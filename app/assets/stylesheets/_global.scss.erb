@@ -326,8 +326,8 @@ p.text-white {
 .page-container
 {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 75%;
+  transform: translateY(-75%);
 //  position: relative;
   width: 100%;
 //  display: table-cell;
@@ -403,6 +403,17 @@ ul.sliding
         position: absolute;
         bottom: 0;
         overflow: hidden;
+        -webkit-transition: all 2.2s;
+        -moz-transition: all 2.2s;
+        -ms-transition: all 2.2s;
+        -o-transition: all 2.2s;
+        transition: all 2.2s;
+        -webkit-transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000);
+        -moz-transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000);
+        -o-transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000);
+        transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000); /* custom */
+    }
+    .parallax-item-content {
         -webkit-transition: all 2.2s;
         -moz-transition: all 2.2s;
         -ms-transition: all 2.2s;

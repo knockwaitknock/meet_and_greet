@@ -107,8 +107,32 @@ function parallax(imageHeight){
         $(this).css({
             'bottom':(this_scrolled*this_speed)+'px'
         });
+    });
+
+    $(".parallax-item-content").each(function(){
+        var this_speed = $(this).data("speed"),
+            this_section = $(this).data("section"),
+            this_scrolled = 0;
+
+        this_speed = this_speed || speed;
+        this_section = this_section || section;
+
+        if((scrolled - imageHeight*(this_section - 2)) > 0)
+            this_scrolled = scrolled - imageHeight*(this_section - 2);
+        $(this).css({
+            'top': 75 - (this_scrolled*this_speed)+'%'
+        });
+
+        $(this).css({
+//            transform: translateY(-50%);
+        '-webkit-transform':'translateY(' + 75 - (this_scrolled * this_speed) + '%)'
+//            '-moz-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
+//             '-ms-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
+//              '-o-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
+//                 'transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)'
+        });
     })
-}
+};
 
 //ymaps.ready(init);
 //var myMap,
