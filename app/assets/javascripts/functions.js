@@ -125,7 +125,7 @@ function parallax(imageHeight){
 
         $(this).css({
 //            transform: translateY(-50%);
-        '-webkit-transform':'translateY(' + 75 - (this_scrolled * this_speed) + '%)'
+//        '-webkit-transform':'translateY(' + 75 - (this_scrolled * this_speed) + '%)'
 //            '-moz-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
 //             '-ms-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
 //              '-o-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
