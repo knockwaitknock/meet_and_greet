@@ -113,12 +113,14 @@ $(function() {
     );
     $("ul#sliding-schedule").itemslide(
         {
-            start: 1
+            start: 1,
+            disable_scroll: true
         }
     );
     $("ul#sliding-questions").itemslide(
         {
-            start: 1
+            start: 1,
+            disable_scroll: true
         }
     );
 
@@ -160,7 +162,7 @@ function parallax(imageHeight){
         if((scrolled - imageHeight*(this_section - 2)) > 0)
             this_scrolled = scrolled - imageHeight*(this_section - 2);
         $(this).css({
-            'top': 67 - (this_scrolled*this_speed)+'%'
+            'top': 60 - (this_scrolled*this_speed)+'%'
         });
 
         $(this).css({
