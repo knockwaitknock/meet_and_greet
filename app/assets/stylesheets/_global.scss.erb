@@ -153,7 +153,7 @@ header {
         }
 
         a:hover,
-        a.active
+        &.active a
         {
           color: $green;
         }
@@ -266,27 +266,28 @@ footer
   width: 100%;
 //  min-height: 870px;
 }
-#main
+#section1
 {
   background: url('<%= asset_path("main.jpg") %> ') no-repeat;
   background-attachment: fixed;
   background-size: 100% auto;
 }
 
-#about,
-#schedule
+#section2,
+#section4,
+#section6
 {
   background: url('<%= asset_path("white-bg.gif") %> ') no-repeat;
   background-size: 100% auto;
 }
 
-#team,
-#contacts
+#section3,
+#section7
 {
   background: url('<%= asset_path("metall.jpg") %> ') no-repeat;;
   background-size: 100% auto;
 }
-#reviews {
+#section5 {
     background: url('<%= asset_path("wood.jpg") %> ') no-repeat;
     background-size: 100% auto;
 }

@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require itemslide.min
 //= require jquery.scrollTo.min
+//= require vendors/jquery.slimscroll.min
+//= require jquery.fullPage.min
+//= require itemslide.min
 //= require functions

@@ -2,37 +2,39 @@ header.color-light
   .logo
     a.header-logo href="/"
   .menu
-    ul.menu-list
-      li.menu-item
+    ul.menu-list#menu
+      li.menu-item.active data-menuanchor="main" style="display:none"
+        a href="#main"
+      li.menu-item data-menuanchor="about"
         a href="#about"
           = 'Школа'
-      li.menu-item
+      li.menu-item data-menuanchor="team"
         a href="#team"
           = 'Команда'
-      li.menu-item
+      li.menu-item data-menuanchor="schedule"
         a href="#schedule"
           = 'Мастер-классы'
-      li.menu-item
+      li.menu-item data-menuanchor="reviews"
         a href="#reviews"
           = 'О нас пишут'
-      li.menu-item
+      li.menu-item data-menuanchor="questions"
         a href="#questions"
           = 'Вопросы и ответы'
-      li.menu-item
+      li.menu-item data-menuanchor="contacts"
         a href="#contacts"
           = 'Контакты'
   .social
-    a.social-item-tw href="#tweet"
-    a.social-item-fb href="#facebook"
+    a.social-item-tw href="#tweet" target="_blank"
+    a.social-item-fb href="https://www.facebook.com/pages/MeetGreet/143932177670" target="_blank"
 footer.color-light
   .enroll
     a href="#enroll"
       = 'Записаться на мастер-класс'
-.content-wrapper
-  #main.page
+#fullpage.content-wrapper
+  #section1.page.section
     .img-wrapper
       = image_tag "logo-big.png", class: "", alt: ''
-  #about.page
+  #section2.page.section
     .page-container.parallax-item-content data-speed="0.012" data-section="2"
       .text-center
         h2
@@ -41,7 +43,7 @@ footer.color-light
           = 'По характеру рельефа полуостров делится на три неравные части: Северо-Крымская равнина с Тарханкутской возвышенностью (около 70 % территории), грядово-холмистые равнины Керченского полуострова с проявлением грязевого вулканизма и горный Крым, простирающийся тремя грядами — Главной (южной), Внутренней и Внешней (северной), разделёнными продольными равнинами.'
     .parallax-item.icon.icon-vegetables data-speed="0.35" data-section="2"
       = image_tag 'p-vegetables.png', alt: '', width: 280, height: 380
-  #team.page
+  #section3.page.section
     .page-container.parallax-item-content data-speed="0.012" data-section="3"
       .text-center
         h2
@@ -59,7 +61,7 @@ footer.color-light
                     = member.name
                   .member-desc
                     = member.desc
-  #schedule.page
+  #section4.page.section
     .page-container.parallax-item-content data-speed="0.012" data-section="4"
       .text-center
         h2
@@ -83,7 +85,7 @@ footer.color-light
       = image_tag 'p-lime.png', alt: '', width: 250, height: 250
     .parallax-item.icon.icon-kettle data-speed="0.45" data-section="4"
       = image_tag 'p-kettle.png', alt: '', width: 480, height: 500
-  #reviews.page
+  #section5.page.section
     .page-container.parallax-item-content data-speed="0.012" data-section="5"
       .text-right
         h2
@@ -96,7 +98,7 @@ footer.color-light
                   = magazine.title
                 p.review
                   = magazine.comment
-  #questions.page
+  #section6.page.section
     .page-container.parallax-item-content data-speed="0.012" data-section="6"
       .text-center
         h2
@@ -115,7 +117,7 @@ footer.color-light
                     = question.answer
     .parallax-item.icon.icon-knifes data-speed="0.5" data-section="6"
       = image_tag 'p-knifes.png', alt: '', width: 400, height: 380
-  #contacts.page
+  #section7.page.section
     .page-container.parallax-item-content data-speed="0.012" data-section="7"
       .text-center
         h2
