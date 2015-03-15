@@ -111,21 +111,21 @@ $(function() {
             disable_scroll: true
         }
     );
-//    $("ul#sliding-schedule").itemslide(
-//        {
-//            start: 1
-//        }
-//    );
-//    $("ul#sliding-questions").itemslide(
-//        {
-//            start: 1
-//        }
-//    );
-//
+    $("ul#sliding-schedule").itemslide(
+        {
+            start: 1
+        }
+    );
+    $("ul#sliding-questions").itemslide(
+        {
+            start: 1
+        }
+    );
+
     $(window).resize(function() {
-//        $("ul#sliding-team").reload();
-//        $("ul#sliding-schedule").reload();
-//        $("ul#sliding-questions").reload();
+        $("ul#sliding-team").reload();
+        $("ul#sliding-schedule").reload();
+        $("ul#sliding-questions").reload();
     });
 
 });
