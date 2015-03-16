@@ -5,17 +5,17 @@ $(function() {
 
 
     // Image height
-    $(window).on("load resize", function(){
-        windowHeight = $(window).height();
-        if(windowHeight < minImageHeight)
-            imageHeight = minImageHeight;
-        else
-            imageHeight = windowHeight;
-        $(".page").css('height', imageHeight + "px");
-    });
+//    $(window).on("load resize", function(){
+//        windowHeight = $(window).height();
+//        if(windowHeight < minImageHeight)
+//            imageHeight = minImageHeight;
+//        else
+//            imageHeight = windowHeight;
+//        $(".page").css('height', imageHeight + "px");
+//    });
 
     // Fixed menu
-    $(window).on("load scroll", function () {
+    $(window).on("scroll", function () {
         var menuHeight = $(".menu").height(),
             windowHeight = $(window).height(),
             countHeader = ($(window).scrollTop() + menuHeight / 2) / windowHeight | 0,
@@ -93,15 +93,12 @@ $(function() {
         anchors: ['main', 'about', 'team', 'schedule', 'reviews', 'questions', 'contacts'],
         menu: '#menu',
         scrollBar: true,
-        slidesNavigation: false
-//        afterRender: function(){
-//            $("ul#sliding-team").itemslide(
-//                {
-//                    start: 1,
-//                    disable_scroll: true
-//                }
-//            );
-//        }
+        slidesNavigation: false,
+        afterRender: function(){
+            var bigLogoHeight = $(".img-wrapper").height(),
+            top = ($(window).height() - bigLogoHeight + $(window).scrollTop()) / 2;
+            $(".img-wrapper").css('top', top + "px");
+        }
     });
 
 
