@@ -4,15 +4,11 @@ class MemberUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
   include CarrierWave::MiniMagick
 
-  storage :file
+  storage :fog
   process :set_content_type
 
   def store_dir
     "storage/#{model.class.base_class.name.underscore}/#{model.id}"
-  end
-
-  def cache_dir
-    "#{Rails.root}/tmp/uploads"
   end
 
   def filename

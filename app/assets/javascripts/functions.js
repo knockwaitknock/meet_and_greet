@@ -95,8 +95,7 @@ $(function() {
         scrollBar: true,
         slidesNavigation: false,
         afterRender: function(){
-            var bigLogoHeight = $(".img-wrapper").height(),
-            top = ($(window).height() - bigLogoHeight + $(window).scrollTop()) / 2;
+            var top = ($(window).height() - 163) / 2;
             $(".img-wrapper").css('top', top + "px");
         }
     });
