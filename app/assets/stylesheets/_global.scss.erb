@@ -169,7 +169,7 @@ header {
   .social
   {
     position: fixed;
-    z-index: 100000;
+    /*z-index: 100000;*/
     top: 0;
     right: 0;
 
@@ -402,7 +402,7 @@ ul.sliding
 .content-wrapper {
     .parallax-item{
         position: absolute;
-        bottom: 0;
+        /*bottom: 0;*/
         overflow: hidden;
         -webkit-transition: all 2.2s;
         -moz-transition: all 2.2s;
@@ -439,6 +439,31 @@ ul.sliding
     }
     .icon-knifes {
         right: 0;
-        margin-bottom: 70px
+        margin-top: -270px
     }
+}
+
+.section .parallax-item {
+    transform: translateY(-50%);
+}
+
+.section.up .page-container.parallax-item-content {
+    top: 30%;
+}
+.section.up .parallax-item{
+    top: 15%;
+}
+
+.section.down .page-container.parallax-item-content {
+    top: 70%;
+}
+.section.down .parallax-item{
+    top: 85%;
+}
+
+.section.active .page-container.parallax-item-content {
+    top: 50%;
+}
+.section.active .parallax-item{
+    top: 50%;
 }
