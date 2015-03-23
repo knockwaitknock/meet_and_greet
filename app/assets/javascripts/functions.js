@@ -97,6 +97,42 @@ $(function() {
         afterRender: function(){
             var top = ($(window).height() - 163) / 2;
             $(".img-wrapper").css('top', top + "px");
+        },
+        onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+
+            //after leaving section 2
+            if(direction =='down'){
+                $(this).removeClass('down').addClass('up');
+            }
+
+            else if(direction == 'up'){
+                $(this).removeClass('up').addClass('down');
+            }
+        },
+        afterLoad: function(anchorLink, index){
+            var loadedSectionIndex = parseInt($(this).attr('id').slice(-1));
+//            console.log(loadedSection)
+
+            $(".section").each(function(){
+                var currentSectionIndex = parseInt($(this).attr('id').slice(-1));
+                $(this).removeClass('down').removeClass('up')
+
+                if(currentSectionIndex < loadedSectionIndex)
+                    $(this).addClass('up');
+                else if(currentSectionIndex > loadedSectionIndex)
+                    $(this).addClass('down');
+            });
+
+//            //using index
+//            if(index == 3){
+//                alert("Section 3 ended loading");
+//            }
+//
+//            //using anchorLink
+//            if(anchorLink == 'secondSlide'){
+//                alert("Section 2 ended loading");
+//            }
         }
     });
 
@@ -132,44 +168,44 @@ function parallax(imageHeight){
     var scrolled = $(window).scrollTop(),
         section = 2,
         speed = 0.5;
-    $(".parallax-item").each(function(){
-        var this_speed = $(this).data("speed"),
-            this_section = $(this).data("section"),
-            this_scrolled = 0;
+//    $(".parallax-item").each(function(){
+//        var this_speed = $(this).data("speed"),
+//            this_section = $(this).data("section"),
+//            this_scrolled = 0;
+//
+//        this_speed = this_speed || speed;
+//        this_section = this_section || section;
+//
+//        if((scrolled - imageHeight*(this_section - 2)) > 0)
+//            this_scrolled = scrolled - imageHeight*(this_section - 2);
+//        $(this).css({
+//            'bottom':(this_scrolled*this_speed)+'px'
+//        });
+//    });
 
-        this_speed = this_speed || speed;
-        this_section = this_section || section;
-
-        if((scrolled - imageHeight*(this_section - 2)) > 0)
-            this_scrolled = scrolled - imageHeight*(this_section - 2);
-        $(this).css({
-            'bottom':(this_scrolled*this_speed)+'px'
-        });
-    });
-
-    $(".parallax-item-content").each(function(){
-        var this_speed = $(this).data("speed"),
-            this_section = $(this).data("section"),
-            this_scrolled = 0;
-
-        this_speed = this_speed || speed;
-        this_section = this_section || section;
-
-        if((scrolled - imageHeight*(this_section - 2)) > 0)
-            this_scrolled = scrolled - imageHeight*(this_section - 2);
-        $(this).css({
-            'top': 60 - (this_scrolled*this_speed)+'%'
-        });
-
-        $(this).css({
-//            transform: translateY(-50%);
-//        '-webkit-transform':'translateY(' + 75 - (this_scrolled * this_speed) + '%)'
-//            '-moz-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
-//             '-ms-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
-//              '-o-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
-//                 'transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)'
-        });
-    })
+//    $(".parallax-item-content").each(function(){
+//        var this_speed = $(this).data("speed"),
+//            this_section = $(this).data("section"),
+//            this_scrolled = 0;
+//
+//        this_speed = this_speed || speed;
+//        this_section = this_section || section;
+//
+//        if((scrolled - imageHeight*(this_section - 2)) > 0)
+//            this_scrolled = scrolled - imageHeight*(this_section - 2);
+//        $(this).css({
+//            'top': 60 - (this_scrolled*this_speed)+'%'
+//        });
+//
+//        $(this).css({
+////            transform: translateY(-50%);
+////        '-webkit-transform':'translateY(' + 75 - (this_scrolled * this_speed) + '%)'
+////            '-moz-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
+////             '-ms-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
+////              '-o-transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)',
+////                 'transform':'translate3d(0px,-'+(scrolled*(scrolled_speed+0.1))+'px, 0px)'
+//        });
+//    })
 }
 
 
