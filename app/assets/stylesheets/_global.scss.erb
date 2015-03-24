@@ -281,8 +281,7 @@ footer
   background-size: 100% auto;
 }
 
-#section3,
-#section7
+#section3
 {
   background: url('<%= asset_path("metall.jpg") %> ') no-repeat;;
   background-size: 100% auto;
@@ -290,6 +289,10 @@ footer
 #section5 {
     background: url('<%= asset_path("wood.jpg") %> ') no-repeat;
     background-size: 100% auto;
+}
+#map
+{
+    height: 100%;
 }
 .text-center {
   margin: 0 auto;
@@ -316,6 +319,7 @@ p
 {
     font-size: 19px;
     line-height: 25px;
+    font-family: 'roboto_slabregular';
 }
 p.text-light
 {
@@ -383,7 +387,11 @@ ul.sliding
 }
 
 .magazine {
-  color: #ffffff;
+  color: #b2b2b2;
+  text-decoration: none;
+}
+.magazine:hover {
+    color: #ffffff;
 }
 
 .review {
@@ -427,6 +435,7 @@ ul.sliding
     }
     .icon-vegetables {
         right: 70px;
+        margin-top: -150px;
     }
     .icon-lime {
         left: -25px;

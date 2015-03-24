@@ -1,3 +1,4 @@
+= render :partial => 'ymaps'
 header.color-light
   .logo
     a.header-logo href="#main"
@@ -40,7 +41,7 @@ footer.color-light
         h2
           = 'Школа Meet & Greet'
         p
-          = 'По характеру рельефа полуостров делится на три неравные части: Северо-Крымская равнина с Тарханкутской возвышенностью (около 70 % территории), грядово-холмистые равнины Керченского полуострова с проявлением грязевого вулканизма и горный Крым, простирающийся тремя грядами — Главной (южной), Внутренней и Внешней (северной), разделёнными продольными равнинами.'
+          = 'Meet&Greet – это пространство для встреч, общения и совместного приготовления еды. Сегодня в Meet&Greet проводятся открытые завтраки и ужины, а также множество закрытых мероприятий — дружеских, семейных и корпоративных праздников.  За пять лет своего существования здесь прошло более 1 200 кулинарных мастер-классов с участием около 24 000 гостей.'
     .parallax-item.icon.icon-vegetables data-speed="0.35" data-section="2"
       = image_tag 'p-vegetables.png', alt: '', width: 280, height: 380
   #section3.page.section
@@ -94,7 +95,7 @@ footer.color-light
           - if @magazines.present?
             - @magazines.each do |magazine|
               li
-                .subtitle.magazine
+                a.subtitle.magazine href="#{magazine.code}" target="_blank"
                   = magazine.title
                 p.review
                   = magazine.comment
@@ -112,17 +113,10 @@ footer.color-light
               li.col-2.align-left
                 .sliding-item-container
                   .subtitle.date-from
-                    = question.title
+                    = raw question.title
                   .answer
-                    = question.answer
+                    = raw question.answer
     .parallax-item.icon.icon-knifes data-speed="0.45" data-section="6"
       = image_tag 'p-knifes.png', alt: '', width: 400, height: 380
   #section7.page.section
-    .page-container.parallax-item-content data-speed="0.012" data-section="7"
-      .text-center
-        h2
-          = 'Наши контакты'
-        p.text-white
-          = 'Занятия проходят по адресу:'
-          br
-          = 'Москва, Большая лубянка, 13 (Starики bar)'
+    #map

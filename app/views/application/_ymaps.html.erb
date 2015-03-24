@@ -1,0 +1,27 @@
+<script>
+    var lat = 55.763970,
+        long = 37.629044;
+    ymaps.ready(map_init);
+    var myMap;
+    var myPlacemark;
+
+    function map_init() {
+        var place = [lat, long];
+        myMap = new ymaps.Map("map", {
+            center: [place[0] + 0.002, place[1] + 0.0057],
+            zoom: 16,
+            controls: []
+        });
+        myMap.controls.add('zoomControl', { top: 10, left: 5 });
+        myMap.behaviors.disable('scrollZoom');
+
+        myPlacemark = new ymaps.Placemark(place, {balloonContent: '<%= render :partial => 'balloon'%>'}, {
+            iconLayout: 'default#image',
+            iconImageHref: '<%=image_url('marker.png')%>',
+            iconImageSize: [24, 41],
+            iconImageOffset: [-12, -38]
+        });
+        myMap.geoObjects.add(myPlacemark);
+        myPlacemark.balloon.open()
+    }
+</script>

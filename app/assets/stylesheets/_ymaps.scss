@@ -1,0 +1,29 @@
+[class*="ymaps"][class*="-balloon__content"]>ymaps {
+  width: 600px !important;
+  height: 355px !important;
+}
+[class*="ymaps"][class*="-balloon__close-button"] {
+  background-image: url("close.png") !important;
+  background-size: cover;
+  width: 40px !important;
+  height: 40px !important;
+  margin-right: 15px !important;
+  margin-top: 15px !important;
+  opacity: 1 !important;
+}
+
+.balloon {
+  padding: 70px;
+  text-align: center;
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  a {
+    color: $green;
+    text-decoration: none;
+    font-size: 19px;
+    line-height: 25px;
+  }
+}
