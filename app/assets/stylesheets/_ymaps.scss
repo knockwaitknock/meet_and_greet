@@ -1,6 +1,6 @@
 [class*="ymaps"][class*="-balloon__content"]>ymaps {
   width: 600px !important;
-  height: 355px !important;
+  height: 440px !important;
 }
 [class*="ymaps"][class*="-balloon__close-button"] {
   background-image: url("close.png") !important;
@@ -13,7 +13,7 @@
 }
 
 .balloon {
-  padding: 70px;
+  padding: 60px 42px 60px 60px;
   text-align: center;
 
   p {
