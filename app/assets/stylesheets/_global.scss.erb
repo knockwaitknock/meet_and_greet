@@ -409,6 +409,7 @@ ul.sliding
 
 .content-wrapper {
     .parallax-item{
+        z-index: 1;
         position: absolute;
         /*bottom: 0;*/
         overflow: hidden;
@@ -423,6 +424,7 @@ ul.sliding
         transition-timing-function: cubic-bezier(0.095, 0.995, 0.090, 1.000); /* custom */
     }
     .parallax-item-content {
+        z-index: 2;
         -webkit-transition: all 2.2s;
         -moz-transition: all 2.2s;
         -ms-transition: all 2.2s;
