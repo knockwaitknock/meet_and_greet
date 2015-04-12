@@ -80,7 +80,8 @@ footer.color-light
                     = l meeting.date_from, :format => '%d %B'
                     .time
                       = l meeting.time_from, :format => '%H:%M'
-                      = l meeting.time_to, :format => ' - %H:%M'
+                      - if meeting.time_to.present?
+                        = l meeting.time_to, :format => ' - %H:%M'
                   .meeting-desc
                     = meeting.desc
     .parallax-item.icon.icon-lime data-speed="0.45" data-section="4"
