@@ -31,6 +31,14 @@ $(function() {
         else
             $("footer").removeClass( "color-dark" ).addClass( "color-light" );
 
+        if(countHeader == 0 || countHeader == 6)
+            $("header").addClass( "shadow" );
+        else
+            $("header").removeClass( "shadow" )
+        if(countFooter == 0 || countFooter == 6)
+            $("footer").addClass( "shadow" );
+        else
+            $("footer").removeClass( "shadow" )
 
         parallax(windowHeight);
 
@@ -97,6 +105,31 @@ $(function() {
         afterRender: function(){
             var top = ($(window).height() - 163) / 2;
             $(".img-wrapper").css('top', top + "px");
+
+//            var lat = 55.763970,
+//                long = 37.629044;
+//            ymaps.ready(map_init);
+//            var myMap;
+//            var myPlacemark;
+//
+//            function map_init() {
+//                var place = [lat, long];
+//                myMap = new ymaps.Map("section7", {
+//                    center: [place[0], place[1]],
+//                    zoom: 15,
+//                    controls: []
+//                });
+//                myMap.controls.add('zoomControl', { top: 10, left: 5 });
+////        myMap.behaviors.disable('scrollZoom');
+//
+////                myPlacemark = new ymaps.Placemark(place, {balloonContent: '<%= render :partial => 'balloon'%>'}, {
+////                    iconLayout: 'default#image',
+////                    iconImageHref: '<%=image_url('placemark.png')%>',
+////                    iconImageSize: [28, 39],
+////                    iconImageOffset: [-14, -39]
+////            });
+//            myMap.geoObjects.add(myPlacemark);
+//            }
         },
         onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
