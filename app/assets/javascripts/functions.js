@@ -94,7 +94,7 @@ $(function() {
 //        return false;
 //    });
 
-    if( screen.width >= 480 ) {
+//    if( screen.width >= 480 ) {
         $('#fullpage').fullpage({
             anchors: ['main', 'about', 'team', 'schedule', 'reviews', 'questions', 'contacts'],
             menu: '#menu',
@@ -166,7 +166,7 @@ $(function() {
 //            }
             }
         });
-    }
+//    }
 
     $("ul#sliding-team").itemslide(
         {
