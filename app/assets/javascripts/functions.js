@@ -94,12 +94,15 @@ $(function() {
 //        return false;
 //    });
 
-//    if( screen.width >= 480 ) {
+    if( screen.width >= 480 ) {
         $('#fullpage').fullpage({
             anchors: ['main', 'about', 'team', 'schedule', 'reviews', 'questions', 'contacts'],
             menu: '#menu',
             scrollBar: true,
             slidesNavigation: false,
+            scrollingSpeed: 1000,
+//            autoScrolling: false,
+//            fitToSection: false,
             afterRender: function () {
                 var top = ($(window).height() - 163) / 2;
                 $(".img-wrapper").css('top', top + "px");
@@ -166,7 +169,46 @@ $(function() {
 //            }
             }
         });
-//    }
+    }
+    else{
+        $('#fullpage').fullpage({
+            anchors: ['main', 'about', 'team', 'schedule', 'reviews', 'questions', 'contacts'],
+            menu: '#menu',
+            scrollBar: true,
+            slidesNavigation: false,
+            autoScrolling: false,
+            fitToSection: false,
+            afterRender: function () {
+                var top = ($(window).height() - 163) / 2;
+                $(".img-wrapper").css('top', top + "px");
+            },
+            onLeave: function (index, nextIndex, direction) {
+                var leavingSection = $(this);
+
+                //after leaving section 2
+                if (direction == 'down') {
+                    $(this).removeClass('down').addClass('up');
+                }
+
+                else if (direction == 'up') {
+                    $(this).removeClass('up').addClass('down');
+                }
+            },
+            afterLoad: function (anchorLink, index) {
+                var loadedSectionIndex = parseInt($(this).attr('id').slice(-1));
+
+                $(".section").each(function () {
+                    var currentSectionIndex = parseInt($(this).attr('id').slice(-1));
+                    $(this).removeClass('down').removeClass('up')
+
+                    if (currentSectionIndex < loadedSectionIndex)
+                        $(this).addClass('up');
+                    else if (currentSectionIndex > loadedSectionIndex)
+                        $(this).addClass('down');
+                });
+            }
+        });
+    }
 
     $("ul#sliding-team").itemslide(
         {
