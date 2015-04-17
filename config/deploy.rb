@@ -1,3 +1,6 @@
+# Если не найдены файлы
+# bundle binstubs puma
+# mina setup
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'

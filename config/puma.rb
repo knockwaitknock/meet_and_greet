@@ -18,7 +18,7 @@ state_path app_root.join('tmp/pids/puma.state').to_s
 
 stdout_redirect app_root.join('log/puma.stdout.log').to_s, app_root.join('log/puma.sterr.log').to_s, true
 
-bind 'tcp://0.0.0.0:9008'
+bind 'tcp://0.0.0.0:9020'
 
 on_restart do
   ENV['BUNDLE_GEMFILE'] = app_root.join('Gemfile').to_s
