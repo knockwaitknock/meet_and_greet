@@ -3,17 +3,6 @@ $(function() {
         windowHeight = $(window).height(),
         imageHeight;
 
-
-    // Image height
-//    $(window).on("load resize", function(){
-//        windowHeight = $(window).height();
-//        if(windowHeight < minImageHeight)
-//            imageHeight = minImageHeight;
-//        else
-//            imageHeight = windowHeight;
-//        $(".page").css('height', imageHeight + "px");
-//    });
-
     // Fixed menu
     $(window).on("scroll", function () {
         var menuHeight = $(".menu").height(),
@@ -94,17 +83,18 @@ $(function() {
 //        return false;
 //    });
 
-
-
-
-    $('#fullpage').fullpage({
-        anchors: ['main', 'about', 'team', 'schedule', 'reviews', 'questions', 'contacts'],
-        menu: '#menu',
-        scrollBar: true,
-        slidesNavigation: false,
-        afterRender: function(){
-            var top = ($(window).height() - 163) / 2;
-            $(".img-wrapper").css('top', top + "px");
+    if( screen.width >= 480 ) {
+        $('#fullpage').fullpage({
+            anchors: ['main', 'about', 'team', 'schedule', 'reviews', 'questions', 'contacts'],
+            menu: '#menu',
+            scrollBar: true,
+            slidesNavigation: false,
+            scrollingSpeed: 1000,
+//            autoScrolling: false,
+//            fitToSection: false,
+            afterRender: function () {
+                var top = ($(window).height() - 163) / 2;
+                $(".img-wrapper").css('top', top + "px");
 
 //            var lat = 55.763970,
 //                long = 37.629044;
@@ -130,32 +120,32 @@ $(function() {
 ////            });
 //            myMap.geoObjects.add(myPlacemark);
 //            }
-        },
-        onLeave: function(index, nextIndex, direction){
-            var leavingSection = $(this);
+            },
+            onLeave: function (index, nextIndex, direction) {
+                var leavingSection = $(this);
 
-            //after leaving section 2
-            if(direction =='down'){
-                $(this).removeClass('down').addClass('up');
-            }
+                //after leaving section 2
+                if (direction == 'down') {
+                    $(this).removeClass('down').addClass('up');
+                }
 
-            else if(direction == 'up'){
-                $(this).removeClass('up').addClass('down');
-            }
-        },
-        afterLoad: function(anchorLink, index){
-            var loadedSectionIndex = parseInt($(this).attr('id').slice(-1));
+                else if (direction == 'up') {
+                    $(this).removeClass('up').addClass('down');
+                }
+            },
+            afterLoad: function (anchorLink, index) {
+                var loadedSectionIndex = parseInt($(this).attr('id').slice(-1));
 //            console.log(loadedSection)
 
-            $(".section").each(function(){
-                var currentSectionIndex = parseInt($(this).attr('id').slice(-1));
-                $(this).removeClass('down').removeClass('up')
+                $(".section").each(function () {
+                    var currentSectionIndex = parseInt($(this).attr('id').slice(-1));
+                    $(this).removeClass('down').removeClass('up')
 
-                if(currentSectionIndex < loadedSectionIndex)
-                    $(this).addClass('up');
-                else if(currentSectionIndex > loadedSectionIndex)
-                    $(this).addClass('down');
-            });
+                    if (currentSectionIndex < loadedSectionIndex)
+                        $(this).addClass('up');
+                    else if (currentSectionIndex > loadedSectionIndex)
+                        $(this).addClass('down');
+                });
 
 //            //using index
 //            if(index == 3){
@@ -166,9 +156,20 @@ $(function() {
 //            if(anchorLink == 'secondSlide'){
 //                alert("Section 2 ended loading");
 //            }
-        }
-    });
-
+            }
+        });
+    }
+    else{
+        // Image height
+        $(window).on("load resize", function(){
+            windowHeight = $(window).height();
+            if(windowHeight < minImageHeight)
+                imageHeight = minImageHeight;
+            else
+                imageHeight = windowHeight;
+            $(".page").css('height', imageHeight + "px");
+        });
+    }
 
     $("ul#sliding-team").itemslide(
         {
