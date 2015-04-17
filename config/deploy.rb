@@ -15,7 +15,7 @@ set :keep_releases, 5
 
 set :user, 'www'
 
-set :shared_paths, ['config/database.yml', 'log', 'tmp', 'public/storage', 'public/uploads']
+set :shared_paths, ['config/secrets.yml', 'config/database.yml', 'log', 'tmp', 'public/storage', 'public/uploads']
 
 task :environment do
   invoke :'rbenv:load'
@@ -45,12 +45,12 @@ task :deploy => :environment do
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
-    # invoke :'deploy:cleanup'
+    invoke :'deploy:cleanup'
 
-    # to :launch do
-    #   queue! "cd #{deploy_to}"
-    #   queue! 'RAILS_ENV=production bin/pumactl -F config/puma.rb stop'
-    #   queue! 'RAILS_ENV=production bin/pumactl -F config/puma.rb start'
-    # end
+    to :launch do
+      queue! "cd #{deploy_to}"
+      queue! 'RAILS_ENV=production bin/pumactl -F config/puma.rb stop'
+      queue! 'RAILS_ENV=production bin/pumactl -F config/puma.rb start'
+    end
   end
 end
