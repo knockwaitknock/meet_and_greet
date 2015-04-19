@@ -15,7 +15,7 @@ set :keep_releases, 5
 
 set :user, 'www'
 
-set :shared_paths, ['config/secrets.yml', 'config/database.yml', 'log', 'tmp', 'public/storage', 'public/uploads']
+set :shared_paths, ['config/secrets.yml', 'config/database.yml', 'log', 'tmp', 'public/storage']
 
 task :environment do
   invoke :'rbenv:load'
