@@ -2,8 +2,8 @@
 
 require 'pathname'
 
-app_root = Pathname.new(Dir.pwd)
-# app_root = Pathname.new('/home/app/artguide/current')
+# app_root = Pathname.new(Dir.pwd)
+app_root = Pathname.new('/home/www/meetandgreet/current')
 
 daemonize
 workers 1
